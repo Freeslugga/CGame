@@ -7,6 +7,7 @@ typedef struct
 {
     char name[NAME_LEN];
     int health;
+    float money;
 } Player;
 
 void init_player(Player *player, const char *name);
