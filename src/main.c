@@ -3,7 +3,7 @@
 #include "commands.h"
 #include "player.h"
 
-void print_welcome(Player player);
+void print_welcome(Player *player);
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
         init_player(&player, input);
     }
 
-    print_welcome(player);
+    print_welcome(&player);
 
     while(1)
     {
@@ -39,8 +39,8 @@ int main()
     return 0;
 }
 
-void print_welcome(Player player)
+void print_welcome(Player *player)
 {
-    printf("Welcome to the Dungeon %s!\n", player.name);
+    printf("\nWelcome to the Dungeon %s!\n", player->name);
     printf("Type 'help' for a list of commands.\n");
 }
