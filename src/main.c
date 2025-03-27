@@ -27,7 +27,7 @@ int main()
             input[strcspn(input, "\n")] = 0;
             if(strcmp(input, "exit") == 0)
             {
-                printf("Thanks for playing!\n");
+                printf("\nThanks for playing!\n");
                 break;
             }
             else
