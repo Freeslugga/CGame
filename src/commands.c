@@ -6,7 +6,7 @@ void process_command(char *command, Player *player)
 {
     if(strcmp(command, "help") == 0)
     {
-        printf("Available commands: help, look, exit");
+        printf("Available commands: help, look, status, take, exit");
     }
     else if(strcmp(command, "look") == 0)
     {

@@ -3,14 +3,12 @@
 #include "commands.h"
 #include "player.h"
 
-void print_welcome();
+void print_welcome(Player player);
 
 int main()
 {
     char input[100];
     Player player;
-
-    print_welcome();
 
     printf("Enter your name: ");
     if(fgets(input, sizeof(input), stdin) != NULL)
@@ -18,6 +16,8 @@ int main()
         input[strcspn(input, "\n")] = 0;
         init_player(&player, input);
     }
+
+    print_welcome(player);
 
     while(1)
     {
@@ -39,8 +39,8 @@ int main()
     return 0;
 }
 
-void print_welcome()
+void print_welcome(Player player)
 {
-    printf("Welcome to the Dungeon!\n");
+    printf("Welcome to the Dungeon %s!\n", player.name);
     printf("Type 'help' for a list of commands.\n");
 }
