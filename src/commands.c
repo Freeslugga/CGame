@@ -29,8 +29,26 @@ void process_command(char *command, Player *player)
     {
         print_inventory(player);
     }
+    else if (strcmp(command, "test") == 0)
+    {
+        char t[64], p[256];
+        parse_input("This is a test command", t, p);
+    }
     else
     {
         printf("Command not recognized. Stop trying to hack me.");
+    }
+}
+
+void parse_input(const char *input, char *command, char *args)
+{
+    int first_space = 0;
+    for (int x = 0; x < strlen(input); x++)
+    {
+        printf("%c", input[x]);
+        if (input[x] == ' ')
+        {
+            break;
+        }
     }
 }
